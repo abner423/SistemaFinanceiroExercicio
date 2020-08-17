@@ -24,27 +24,6 @@ public class Home extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Cliente cliente = new Cliente(1, "roberto", 3618901l, "06785629110");
-					Home frame = new Home(cliente, new ContaCorrente(cliente));
-					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public Home(Cliente cliente, Conta conta) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -95,6 +74,7 @@ public class Home extends JFrame {
 					num = Double.parseDouble(JOptionPane.showInputDialog("Quantia que deseja sacar"));
 					if(conta.sacar(num) == 1) {
 						JOptionPane.showMessageDialog(null, "Saque realizado");
+						System.out.println("debug");
 					}
 				} catch (NumberFormatException excecao) {
 					JOptionPane.showMessageDialog(null, "Entre apenas numeros");

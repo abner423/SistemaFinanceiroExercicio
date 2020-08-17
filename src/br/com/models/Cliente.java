@@ -1,13 +1,16 @@
 package br.com.models;
 
+import java.util.Random;
+
 public class Cliente {
 	private Integer id;
 	private String sobreNome;
-	private Long rg;
+	private String rg;
 	private String cpf;
 	
-	public Cliente(Integer id, String sobreNome, Long rg, String cpf) {
-		this.id = id;
+	public Cliente(String sobreNome, String rg, String cpf) {
+		Random gerador = new Random();
+		this.id = gerador.nextInt();
 		this.sobreNome = sobreNome;
 		this.rg = rg;
 		this.cpf = cpf;
@@ -24,10 +27,10 @@ public class Cliente {
 	public void setSobreNome(String sobreNome) {
 		this.sobreNome = sobreNome;
 	}
-	public Long getRg() {
+	public String getRg() {
 		return rg;
 	}
-	public void setRg(Long rg) {
+	public void setRg(String rg) {
 		this.rg = rg;
 	}
 	public String getCpf() {

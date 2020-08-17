@@ -10,7 +10,7 @@ public class ContaPoupanca extends Conta {
 	}
 
 	public int sacar(double valorSacado) {
-		if (valorSacado > 0) {
+		if (valorSacado < 0) {
 			if (valorSacado > super.saldo) {
 				JOptionPane.showMessageDialog(null, "Saldo insuficiente");
 			}
