@@ -1,7 +1,6 @@
 package br.com.views;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -74,7 +73,6 @@ public class Home extends JFrame {
 					num = Double.parseDouble(JOptionPane.showInputDialog("Quantia que deseja sacar"));
 					if(conta.sacar(num) == 1) {
 						JOptionPane.showMessageDialog(null, "Saque realizado");
-						System.out.println("debug");
 					}
 				} catch (NumberFormatException excecao) {
 					JOptionPane.showMessageDialog(null, "Entre apenas numeros");
@@ -113,7 +111,7 @@ public class Home extends JFrame {
 					JOptionPane.showMessageDialog(null, "Seu tipo de conta nao permite esse tipo de operação");
 				}else {
 					double num;
-					num =  conta.recolherJurosMensais();
+					num =  ((ContaPoupanca)conta).recolherJurosMensais();
 					JOptionPane.showMessageDialog(null, "Juros do mes: R$ "+num);
 				}
 			}

@@ -33,7 +33,4 @@ public abstract class Conta {
 		return this.saldo;
 	}
 
-	public abstract double recolherJurosMensais();
-
-	public abstract void depositarCheque(double valor, String bancoEmissor, String dataPagamento);
 }

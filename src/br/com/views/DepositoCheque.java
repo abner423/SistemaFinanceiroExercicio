@@ -14,6 +14,8 @@ import javax.swing.border.EmptyBorder;
 
 import br.com.models.Cliente;
 import br.com.models.Conta;
+import br.com.models.ContaCorrente;
+
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -105,7 +107,7 @@ public class DepositoCheque extends JFrame {
 					inputDataPagamento.setText("");
 					
 					JOptionPane.showMessageDialog(null, "Depósito do cheque realizado");
-					conta.depositarCheque(valor, banco, data);
+					((ContaCorrente)conta).depositarCheque(valor, banco, data);
 					Home home = new Home(cliente,conta);
 					dispose();
 					home.setVisible(true);

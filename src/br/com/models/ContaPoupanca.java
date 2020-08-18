@@ -25,8 +25,4 @@ public class ContaPoupanca extends Conta {
 		return taxaDeJuros * super.saldo;
 	}
 
-	@Override
-	public void depositarCheque(double valor, String bancoEmissor, String dataPagamento) {
-	}
-
 }
